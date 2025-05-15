@@ -11,7 +11,10 @@ LIST_URL = "https://www.i-sh.co.kr/main/lay2/program/S1T294C297/www/brd/m_247/li
 
 
 def fetch_items():
-    res = requests.get(LIST_URL)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/117.0.0.0 Safari/537.36"
+    }
+    res = requests.get(LIST_URL, headers=headers)
     soup = BeautifulSoup(res.text, 'html.parser')
     items = []
 
@@ -28,6 +31,7 @@ def fetch_items():
 
         items.append((title, link, pub_date))
     return items
+
 
 
 def build_rss(items):
