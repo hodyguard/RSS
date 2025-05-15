@@ -1,0 +1,15 @@
+<rss version="2.0">
+  <channel>
+    <title>auri 정책브리프</title>
+    <link>https://www.auri.re.kr</link>
+    <description>건축공간연구원 브리프 RSS</description>
+
+    <item>
+      <title>도시복합개발의 방향</title>
+      <link>https://www.auri.re.kr/view.es?mid=a10313000000&brd_no=12345</link>
+      <pubDate>Wed, 15 May 2024 09:00:00 +0900</pubDate>
+      <description><![CDATA[<p>도시복합개발의 유형과 운영방안을 중심으로 분석...</p>]]></description>
+    </item>
+
+  </channel>
+</rss>
