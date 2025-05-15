@@ -2,7 +2,7 @@ name: Build SH Housing RSS
 
 on:
   schedule:
-    - cron: '0 * * * *'  # 매일 오전 10시(KST)
+    - cron: '0 * * * *'  # 매시간 정각 실행 (UTC 기준)
   workflow_dispatch:
 
 jobs:
@@ -23,13 +23,12 @@ jobs:
         pip install requests beautifulsoup4
 
     - name: Run crawler
-      run: |
-        python SH공사\ 주택임대\ 공고\ RSS\ 자동\ 생성기.py
+      run: python sh_housing_rss.py
 
-    - name: Commit and push
+    - name: Commit and push RSS
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add rss.xml
-        git commit -m "🔄 자동 업데이트된 RSS 파일"
+        git commit -m "🔄 자동 업데이트된 RSS"
         git push
