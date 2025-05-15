@@ -2,7 +2,7 @@ name: Build SH Housing RSS
 
 on:
   schedule:
-    - cron: '0 * * * *'  # 매시간 정각 실행 (UTC 기준)
+    - cron: '0 * * * *'  # 매시간 정각 실행 (UTC 기준 = KST 오전 9시부터)
   workflow_dispatch:
 
 jobs:
@@ -30,5 +30,5 @@ jobs:
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add rss.xml
-        git commit -m "🔄 자동 업데이트된 RSS"
+        git diff --cached --quiet || git commit -m "🔄 자동 업데이트된 RSS"
         git push
